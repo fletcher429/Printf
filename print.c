@@ -20,18 +20,6 @@ int _printf(const char *format, ...)
 
 			func_print matches[] = {
 				{"c", print_char},
-				{"d", print_int}, {"i", print_int},
-				{"o", print_octal},
-				{"s", print_str},
-				{"x", print_hex},
-				{"X", print_HEX},
-				{"b", print_bin},
-				{"f", print_float},
-				{"u", print_unsigned},
-				{"S", print_exstring},
-				{"R", print_rot13},
-				{"r", print_srev},
-				{"%", print_percent},
 				{NULL, NULL}
 
 

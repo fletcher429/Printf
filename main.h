@@ -17,25 +17,13 @@
 typedef struct format
 {
 	char *spec;
-	int (*f)(va_list);
+	int (*f)();
 }func_print;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int print_pointer(va_list print);
-int print_int(va_list print);
 int print_char(va_list val);
-int print_bin(va_list val);
-int print_hex(va_list print);
-int print_HEX(va_list print);
-int print_octal(va_list print);
-int print_unsigned(va_list print);
-int print_str(va_list print);
-int print_float(va_list print);
-int print_percent(va_list print);
-int print_rot13(va_list print);
-int print_exstring(va_list print);
-int print_srev(va_list print);
+int print_string(va_list print);
 
 
 #endif
