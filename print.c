@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 			func_print matches[] = {
 				{"c", print_char},
 				{"s", print_string},
+				{"%", print_percent},
 				{NULL, NULL}
 			};
 			i++;
