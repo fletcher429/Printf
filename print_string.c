@@ -6,9 +6,9 @@
  * Return: number of characters printed
  */
 
-int print_str(va_list printf)
+int print_str(va_list print)
 {
-	char *str = va_arg(printf, char *);
+	char *str = va_arg(print, char *);
 	int count = 0;
 
 	if (str == NULL)
