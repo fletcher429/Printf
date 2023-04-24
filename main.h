@@ -1,5 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
+
 
 /**
  * struct func_print - structure to match conversion specififer with its function
@@ -15,6 +20,8 @@ typedef struct func_print
 }func_print;
 
 int _printf(const char *format, ...);
+int _putchar(char *s);
+int print_pointer(va_list print);
 
 
 #endif
