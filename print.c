@@ -34,7 +34,6 @@ int _printf(const char *format, ...)
 			}
 			if (!match)
 			{
-				_putchar('%');
 				_putchar(format[i]);
 				count += 2;
 			}
