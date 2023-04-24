@@ -15,6 +15,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			int match = 0, j = 0;
+			_putchar('%');
+			counter++;
+			i++;
+			continue;
 			func_print matches[] = {
 				{"c", print_char},
 				{"s", print_string}, {"%", print_percent},
@@ -33,7 +37,6 @@ int _printf(const char *format, ...)
 			}
 			if (!match)
 			{
-				_putchar('%');
 				_putchar(format[i]);
 				count += 2;
 			}
