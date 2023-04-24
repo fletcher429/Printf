@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 
 			func_print matches[] = {
 				{"c", print_char},
+				{"s",print_string},
 				{NULL, NULL}
 
 
