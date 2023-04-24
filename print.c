@@ -12,27 +12,32 @@ int _printf(const char *format, ...)
 
 	va_start(print, format);
 
-
-	while (format[i] && format)
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
-			int match_found = 0, j = 0;
+			int match = 0, j = 0;
 
-			search_match_t matches[] = {
-				{'i', print_int},
-				{'d', print_int},
-				{'c', print_char},
-				{'p', print_pointer},
-				{'b', print_bin},
-				{'x', print_hex},
-				{'X', print_HEX},
-				{'o', print_octal},
-				{'u', print_unsigned},
-				{'s', print_str},
-				{'f', print_float},
-				{'%', print_prec},
+			func_print matches[] = {
+				{"c", print_char},
+				{"d", print_int}, {"i", print_int},
+				{"o", print_octal},
+				{"s", print_str},
+				{"x", print_hex},
+				{"X", print_HEX},
+				{"b", print_bin},
+				{"f", print_float},
+				{"u", print_unsigned},
+				{"S", print_exstring},
+				{"R", print_rot13},
+				{"r", print_srev},
+				{"%", print_percent},
 				{NULL, NULL}
+
+
+			
+			
+			
 			};
 			i++;
 			while (matches[j].spec)
@@ -40,26 +45,27 @@ int _printf(const char *format, ...)
 				if (format[i] == *(matches[j].spec))
 				{
 					count += matches[j].f(print);
-					match_found = 1;
+					match = 1;
 					break;
 				}
 				j++;
 			}
-			if (!match_found)
+			if (!match)
 			{
 				_putchar('%');
 				_putchar(format[i]);
 				count += 2;
 			}
-
 		}
 		else
 		{
-			_puthchar(format[i]);
+			_putchar(format[i]);
 			count++;
 		}
 		i++;
 	}
 	va_end(print);
 	return (count);
+
+
 }

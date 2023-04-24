@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+#include <unistd.h>
 
 
 /**
@@ -13,15 +14,28 @@
  *
  */
 
-typedef struct func_print
+typedef struct format
 {
 	char *spec;
 	int (*f)(va_list);
 }func_print;
 
 int _printf(const char *format, ...);
-int _putchar(char *s);
+int _putchar(char c);
 int print_pointer(va_list print);
+int print_int(va_list print);
+int print_char(va_list print);
+int print_bin(va_list print);
+int print_hex(va_list print);
+int print_HEX(va_list print);
+int print_octal(va_list print);
+int print_unsigned(va_list print);
+int print_str(va_list print);
+int print_float(va_list print);
+int print_percent(va_list print);
+int print_rot13(va_list print);
+int print_exstring(va_list print);
+int print_srev(va_list print);
 
 
 #endif
