@@ -14,8 +14,7 @@ typedef struct func_print
 	int (*f)(va_list);
 }func_print;
 
-int (const char *format, ...);
-
+int _printf(const char *format, ...);
 
 
 #endif
