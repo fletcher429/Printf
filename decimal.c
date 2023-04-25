@@ -14,7 +14,7 @@ int print_dec(va_list val)
 	{
 		_putchar('-');
 		num++;
-		n =- n;
+		n = -n;
 	}
 	if (n / 10)
 	{
