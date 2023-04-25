@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int i = 0, count = 0;
 
 	va_start(print, format);
-	while (format != '\0')
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
