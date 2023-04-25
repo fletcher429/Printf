@@ -18,6 +18,7 @@ typedef struct format
 {
 	char *spec;
 	int (*f)();
+
 } func_print;
 
 int _printf(const char *format, ...);

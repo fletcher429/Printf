@@ -9,41 +9,45 @@ int _printf(const char *format, ...)
 	va_list print;
 	int i = 0, count = 0;
 
+	func_print matches[] = {
+		{"c", print_char}, {"s", print_string},
+		{"%", print_percent},
+		{NULL, NULL}
+	};
 	va_start(print, format);
 	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
-			int match = 0, j = 0;
-			func_print matches[] = {
-				{"c", print_char}, {"d", print_dec},
-				{"s", print_string}, {"%", print_percent},
-				{NULL, NULL}
-			};
 			i++;
-			while (matches[j].spec)
-			{
-				if (format[i] == *(matches[j].spec))
-				{
-					count += matches[j].f(print);
-					match = 1;
-					break;
-				}
-				j++;
-			}
-			if (!match)
+			if (format[i] == '%')
 			{
 				_putchar('%');
-				_putchar(format[i]);
-				count += 2;
+				count++;
+			}
+			else
+			{
+				int j = 0;
+				while (matches[j].spec)
+				{
+					if (*matches[j].spec == format[i])
+					{
+						count += matches[j].f(print);
+						break;
+					}
+					j++;
+				}
 			}
 		}
 		else
-		{	_putchar(format[i]);
+		{
+			_putchar(format[i]);
 			count++;
+
 		}
 		i++;
 	}
 	va_end(print);
 	return (count);
+
 }
