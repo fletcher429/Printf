@@ -7,22 +7,23 @@
 
 int print_dec(va_list val)
 {
-	int n = va_arg(val, int);
-	int res, num = 0;
+	int rem, n, i =0;
+	n = va_arg(val, int);
 
-	if (n < 0)
+	if  (n < 0)
 	{
 		_putchar('-');
-		num++;
 		n = -n;
+		i++;
+
 	}
-	if (n / 10)
+	if (n >= 10)
 	{
-		num += print_dec(val);
+		i += print_dec(val);
 	}
-	res = n % 10 + '0';
-	_putchar(res);
+	rem = n % 10;
+	_putchar(rem + '0');
+	i++;
 
-	return (num + 1);
-
+	return (i);
 }
