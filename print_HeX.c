@@ -1,11 +1,11 @@
 #include "main.h"
 
+
 /**
  * print_hex - prints hexadecimal
- * @va: args
- * Return: number of char printed
-*/
-
+ * @print: argument list
+ * Return: number of printed characters
+ */
 int print_hex(va_list print)
 {
     unsigned int hex = va_arg(print, unsigned int);
@@ -33,13 +33,14 @@ int print_hex(va_list print)
         }
 
         hex = hex / 16;
-
     }
-    for (i = 1 - 1; i>= 0; i--)
+
+    for (i = i - 1; i >= 0; i--)
     {
         _putchar(str[i]);
         count++;
     }
+
     free(str);
-    return (count);
+    return count;
 }

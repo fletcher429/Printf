@@ -8,7 +8,7 @@
 int print_unsigned(va_list print)
 {
 
-	int n = va_arg(print, int);
+	unsigned int n = va_arg(print, unsigned int);
 	int num, last_digit = n % 10;
 	int div, j = 1, power = 1;
 	int d;
@@ -21,7 +21,7 @@ int print_unsigned(va_list print)
 		_putchar('-');
 		num = -n;
 		n = -n;
-		last_digit = +last_digit;
+		last_digit = -last_digit;
 		j++;
 	}
 	if (num >= 0)
