@@ -28,5 +28,5 @@ int _strlen(const char *c);
 int print_percent(void);
 int print_dec(va_list val);
 int print_int(va_list val);
-int print_bin(va_list print);
+
 #endif
