@@ -8,17 +8,14 @@
  * Return: written char
 */
 
-void myprintf(const char* format, ...)
+void myprintf(const char *format, ...)
 {
-    char buffer[1024];
-    va_list print;
-    int length;
+	char buffer[1024];
+	va_list print;
+	int length;
 
-    va_start(print, format);
-
-    length = vsnprintf(buffer, sizeof(buffer), format, print);
-
-    va_end(print);
-
-    write(STDOUT_FILENO, buffer, length);
+	va_start(print, format);
+	length = vsnprintf(buffer, sizeof(buffer), format, print);
+	va_end(print);
+	write(STDOUT_FILENO, buffer, length);
 }
