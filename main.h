@@ -33,5 +33,6 @@ int print_octal(va_list print);
 int print_hex(va_list print);
 int print_unsigned(va_list print);
 void myprintf(const char* format, ...);
+int printf_Exc(va_list print);
 
 #endif

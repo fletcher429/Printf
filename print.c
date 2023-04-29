@@ -16,8 +16,8 @@ int _printf(const char *format, ...)
 		{
 			int match = 0, j = 0;
 			func_print matches[] = {
-				{"c", print_char}, {"d", print_dec}, {"b", print_bin},{"x", print_hex}, {"X", print_hex},
-				{"s", print_string}, {"%", print_percent},{"i", print_int},{"u", print_unsigned},
+				{"c", print_char}, {"d", print_dec}, {"b", print_bin}, {"x", print_hex}, {"X", print_hex},
+				{"s", print_string}, {"%", print_percent}, {"i", print_int},{"u", print_unsigned},
 				{"o", print_octal},
 				{NULL, NULL}
 			};
